@@ -1,1 +1,49 @@
-<p>clients works!</p>
+
+<div class="fundo">
+
+    <div class="mb-3" style="text-align: center; color: wheat; font-size: large;">
+     <form [formGroup]="formGroupCliente">
+      
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Name</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name" ><br><br>
+      
+        <label for="exampleFormControlTextarea1" class="form-label">Email address</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="name@example.com"></textarea><br>
+    
+        <button type="button" class="btn btn-warning">Save</button>
+        
+       
+    
+        </div>
+      </form>
+    
+    </div>
+    <table class="table" style="text-align: center; color: wheat; font-size: medium;">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Contact(E-mail)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    </div>
+    
+    <style>
+    
+      .fundo{
+        width: 100%;
+        background-color: darkcyan;
+      }
+    
+    </style>
+    
