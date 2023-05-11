@@ -37,7 +37,7 @@ export class ClientsComponent implements OnInit{
     );
   }
 
-  save(){
+  saveClients(){
     this.ClientsService.save(this.formGroupCliente.value).subscribe(
       {
         next : data => {

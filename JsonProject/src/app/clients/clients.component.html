@@ -5,13 +5,13 @@
      <form [formGroup]="formGroupCliente">
       
       <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Name</label>
+        <label for="exampleFormControlInput1" class="form-label" id="name">Name</label>
         <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name" ><br><br>
       
-        <label for="exampleFormControlTextarea1" class="form-label">Email address</label>
+        <label for="exampleFormControlTextarea1" class="form-label" id="email">Email address</label>
         <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="name@example.com"></textarea><br>
     
-        <button type="button" class="btn btn-warning">Save</button>
+        <button type="button" class="btn btn-warning" (click)="saveClients() ">Save</button>
         
        
     
