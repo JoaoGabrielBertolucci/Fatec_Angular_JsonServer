@@ -9,6 +9,46 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   templateUrl: './clients.component.html',
   styleUrls: ['./clients.component.css']
 })
-export class ClientsComponent {
+export class ClientsComponent implements OnInit{
+  
+  Clients : clients[] = [];
+  formGroupCliente : FormGroup;
+
+  constructor(private ClientsService : ClientsService,
+              private formBuilder : FormBuilder
+              ){
+    this.formGroupCliente = formBuilder.group({
+      id : [''],
+      name : [''],
+      email : ['']
+    });
+  }
+
+  ngOnInit(): void {
+    this.loadClients();
+  }
+
+  loadClients(){
+    this.ClientsService.getClients().subscribe(
+      {
+        next : data => this.Clients = data,
+        error : () => console.log("Erro ao chamar o endpoint")
+      }
+    );
+  }
+
+  save(){
+    this.ClientsService.save(this.formGroupCliente.value).subscribe(
+      {
+        next : data => {
+          this.Clients.push(data);
+          this.formGroupCliente.reset();
+        }
+      }
+    );
+  }
+
+
+
 
 }

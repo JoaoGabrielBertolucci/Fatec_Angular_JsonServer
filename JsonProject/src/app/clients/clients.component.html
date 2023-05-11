@@ -28,15 +28,15 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-        </tr>
+        <tr *ngFor="let client of Clients">
+            <th scope="row">{{client.id}}</th>
+            <td>{{client.name}}</td>
+            <td>{{client.email}}</td>
+          </tr>
       </tbody>
     </table>
     
-    </div>
+</div>
     
     <style>
     
