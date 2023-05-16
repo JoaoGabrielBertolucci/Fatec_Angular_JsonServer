@@ -6,12 +6,13 @@
       
       <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label" id="name">Name</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name" ><br><br>
+        <input type="email" class="form-control" formControlName="name" id="exampleFormControlInput1" placeholder="name" ><br><br>
       
         <label for="exampleFormControlTextarea1" class="form-label" id="email">Email address</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="name@example.com"></textarea><br>
+        <textarea class="form-control" formControlName="email" id="exampleFormControlTextarea1" placeholder="name@example.com"></textarea><br>
     
-        <button type="button" class="btn btn-warning" (click)="saveClients() ">Save</button>
+        <button type="button" class="btn btn-warning" (click)="saveClients()">Save</button>
+        <button type="button" class="btn btn-warning" (click)="loadClients()">load</button>
         
        
     
@@ -28,10 +29,16 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let client of Clients">
-            <th scope="row">{{client.id}}</th>
-            <td>{{client.name}}</td>
-            <td>{{client.email}}</td>
+        <tr *ngFor="let Clients of Clients">
+            <th scope="row">{{Clients.id}}</th>
+            <td>{{Clients.name}}</td>
+            <td>{{Clients.email}}</td>
+
+            <td class="d-flex justify-content-end">
+              <button class="btn btn-warning me-1" (click)="remove(Clients)">Excluir</button>
+              <button class="btn btn-danger"        (click)="editing(Clients)">Editar</button>
+            </td>
+
           </tr>
       </tbody>
     </table>

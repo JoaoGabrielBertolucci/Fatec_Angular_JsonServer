@@ -14,10 +14,18 @@ export class ClientsService {
   getClients(): Observable<clients[]>{
     let url = "http://localhost:3000/clients";
     return this.http.get<clients[]>(url);
-    return this.http.get<clients[]>(this.url);
   }
 
   save(client : clients): Observable<clients>{
     return this.http.post<clients>(this.url, client);
   }
+
+  remove(client: clients): Observable<void> {
+    return this.http.delete<void>(`${this.url}/${client.id}`);
+  }
+
+  update(client: clients): Observable<clients> {
+    return this.http.put<clients>(`${this.url}/${client.id}`,client);
+  }
+ 
 }
